@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 12, 2022 at 06:00 AM
+-- Generation Time: Jul 26, 2022 at 05:55 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -24,6 +24,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_announcement`
+--
+
+CREATE TABLE `tbl_announcement` (
+  `a_id` int(100) NOT NULL,
+  `date_posted` varchar(100) NOT NULL,
+  `a_author` varchar(200) NOT NULL,
+  `a_subject` varchar(200) NOT NULL,
+  `a_content` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_announcement`
+--
+
+INSERT INTO `tbl_announcement` (`a_id`, `date_posted`, `a_author`, `a_subject`, `a_content`) VALUES
+(3, '2022-07-26T03:46:18+00:00', '1st', 'Free Avocado', '50 only');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_accounts`
 --
 
@@ -40,11 +61,17 @@ CREATE TABLE `user_accounts` (
 --
 
 INSERT INTO `user_accounts` (`uid`, `email`, `fullname`, `password`, `user_type`) VALUES
-(1, 'pocketguide-admin', '6gL_R.KAFC.St*]d', '123', '1');
+(1, 'jelalger@donbosco.edu.ph', 'emmanalger', '123', '1');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `tbl_announcement`
+--
+ALTER TABLE `tbl_announcement`
+  ADD PRIMARY KEY (`a_id`);
 
 --
 -- Indexes for table `user_accounts`
@@ -55,6 +82,12 @@ ALTER TABLE `user_accounts`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `tbl_announcement`
+--
+ALTER TABLE `tbl_announcement`
+  MODIFY `a_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user_accounts`
